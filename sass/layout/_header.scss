@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__date {
+    color: $color-white;
+    font-size: 3rem;
+  }
+
+  &__img {
+    width: 6rem;
+    border-radius: 50%;
+    display: block;
+  }
+}

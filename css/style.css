@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: #98b5ff;
+  min-height: 100vh; }
+
+.container {
+  max-width: 40rem;
+  margin: 8rem auto;
+  background-color: #344fa1;
+  padding: 3rem;
+  border-radius: 5rem;
+  min-height: 60rem; }
+
+.header {
+  display: flex;
+  justify-content: space-between; }
+  .header__date {
+    color: #fff;
+    font-size: 3rem; }
+  .header__img {
+    width: 6rem;
+    border-radius: 50%;
+    display: block; }
