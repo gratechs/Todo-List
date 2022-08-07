@@ -4,7 +4,7 @@
   border-radius: 2.5rem;
 
   &:not(:last-child) {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
 
   &__check {
@@ -75,7 +75,7 @@
 }
 
 .task-btn {
-  border: 1px solid black;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 4rem;
 }

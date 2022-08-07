@@ -2,15 +2,25 @@
   display: inline-block;
   font-size: 4.5rem;
   font-weight: 400;
-  text-decoration: none;
   color: $color-white;
   background-color: $color-secondary;
   width: 7rem;
   height: 7rem;
   border-radius: 10rem;
-  box-shadow: 1rem 5rem 15rem rgba($color-secondary, 0.7);
+  border: none;
+  box-shadow: 0 1rem 1rem rgba($color-secondary, 0.3);
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: absolute;
+  left: 30rem;
+  bottom: 5rem;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
 }
