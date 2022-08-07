@@ -15,9 +15,54 @@
   <body>
     <div class="container">
       <header class="header">
-        <h1 class="header__date">August 4, 2022</h1>
+        <h1 class="header-primary">August 4, 2022</h1>
         <img src="img/profile.jpg" alt="My profile" class="header__img" />
       </header>
+
+      <main>
+        <section class="section-tasks">
+          <h3 class="heading-tertiary u-margin-bottom-small">Incomplete</h3>
+          <div class="tasks">
+            <input type="checkbox" id="t1" class="tasks__check" />
+            <label for="t1" class="tasks__label tasks--completed-label"
+              ><span class="tasks__button"></span>Daily meeting with team</label
+            >
+          </div>
+          <div class="tasks">
+            <input type="checkbox" id="t2" class="tasks__check" />
+            <label for="t2" class="tasks__label tasks--completed-label"
+              ><span class="tasks__button"></span>Complete react course</label
+            >
+          </div>
+          <div class="tasks">
+            <input type="checkbox" id="t3" class="tasks__check" />
+            <label for="t3" class="tasks__label tasks--completed-label"
+              ><span class="tasks__button"></span>Complete todo list
+              project</label
+            >
+          </div>
+        </section>
+
+        <section class="section-completed">
+          <h3 class="heading-tertiary u-margin-bottom-small">Completed</h3>
+          <div class="tasks tasks--completed">
+            <input type="checkbox" id="t4" class="tasks__check" />
+            <label for="t4" class="tasks__label tasks--completed-label"
+              ><span class="tasks__button"></span>Daily meeting with team</label
+            >
+          </div>
+          <div class="tasks">
+            <input type="checkbox" id="t2" class="tasks__check" />
+            <label for="t2" class="tasks__label"
+              ><span class="tasks__button"></span>Complete react course</label
+            >
+          </div>
+        </section>
+
+        <div class="task-btn">
+          <a href="#" class="btn">&plus;</a>
+        </div>
+      </main>
     </div>
   </body>
 </html>

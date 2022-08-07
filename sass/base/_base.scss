@@ -15,6 +15,10 @@ body {
   font-family: $font-primary;
   font-weight: 400;
   line-height: 1.6;
-  background-color: $color-primary-light;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
   min-height: 100vh;
 }

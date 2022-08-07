@@ -1,0 +1,16 @@
+.btn {
+  display: inline-block;
+  font-size: 4.5rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: $color-white;
+  background-color: $color-secondary;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 10rem;
+  box-shadow: 1rem 5rem 15rem rgba($color-secondary, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
