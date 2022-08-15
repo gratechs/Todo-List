@@ -1,3 +1,20 @@
 .section-tasks {
   margin-bottom: 3rem;
 }
+
+.section-modal-task {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-white,
+    $color-grey-dark
+  );
+  padding: 8rem 3rem;
+  width: 38rem;
+  border-radius: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}

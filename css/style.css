@@ -53,6 +53,61 @@ body {
   .btn:hover {
     transform: translateY(-2px) scale(1.05); }
 
+.modal-task__input {
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: none;
+  background-color: #fff;
+  border-bottom: 3px solid transparent; }
+  .modal-task__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #344fa1; }
+  .modal-task__input:focus:invalid {
+    border-bottom: 3px solid #df47ec; }
+
+.modal-task__close {
+  border: none;
+  background: none;
+  color: #1c3067;
+  font-size: 4.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 34rem; }
+
+.modal-task__btn {
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  background: #344fa1;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto; }
+  .modal-task__btn:hover {
+    background: #2f4791;
+    transform: translateY(-0.1rem); }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 5; }
+
+.hidden {
+  display: none; }
+
 .tasks {
   background-color: #031956;
   padding: 2rem;
@@ -138,3 +193,15 @@ body {
 
 .section-tasks {
   margin-bottom: 3rem; }
+
+.section-modal-task {
+  background-image: linear-gradient(to right bottom, #fff, #d1d1d1);
+  padding: 8rem 3rem;
+  width: 38rem;
+  border-radius: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10; }
