@@ -1,0 +1,10 @@
+.error {
+  text-align: center;
+
+  & p {
+    color: rgba(245, 227, 227, 0.945);
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 600;
+  }
+}

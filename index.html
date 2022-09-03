@@ -5,34 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@300;400;500;600;700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/script.js"></script>
 
     <title>To-do List</title>
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <h1 class="header-primary">August 4, 2022</h1>
-        <img src="img/profile.jpg" alt="My profile" class="header__img" />
+        <h1 class="header-primary"><span class="date">August 4, 2022</span></h1>
+        <img src="./src/img/profile.jpg" alt="My profile" class="header__img" />
       </header>
 
       <main>
-        <section class="section-tasks">
-          <h3 class="heading-tertiary u-margin-bottom-small">Incomplete</h3>
+        <div class="error u-margin-bottom-huge">
+          <p>No tasks added. Click on the button to add a new task.🙂</p>
+        </div>
+
+        <!--   <section class="section-tasks">
+       <h3 class="heading-tertiary u-margin-bottom-small">Incomplete</h3>
           <div class="tasks">
             <input type="checkbox" id="t1" class="tasks__check" />
             <label for="t1" class="tasks__label tasks--completed-label"
               ><span class="tasks__button"></span>Daily meeting with team</label
             >
+            <div class="tasks-btn">
+              <button class="tasks-btn__edit">Edit</button>
+              <button class="tasks-btn__delete">Delete</button>
+            </div>
           </div>
           <div class="tasks">
             <input type="checkbox" id="t2" class="tasks__check" />
             <label for="t2" class="tasks__label tasks--completed-label"
               ><span class="tasks__button"></span>Complete react course</label
             >
+            <div class="tasks-btn">
+              <button class="tasks-btn__edit">Edit</button>
+              <button class="tasks-btn__delete">Delete</button>
+            </div>
           </div>
           <div class="tasks">
             <input type="checkbox" id="t3" class="tasks__check" />
@@ -40,26 +53,40 @@
               ><span class="tasks__button"></span>Complete todo list
               project</label
             >
+            <div class="tasks-btn">
+              <button class="tasks-btn__edit">Edit</button>
+              <button class="tasks-btn__delete">Delete</button>
+            </div>
           </div>
-        </section>
+        </section> -->
 
-        <section class="section-completed">
-          <h3 class="heading-tertiary u-margin-bottom-small">Completed</h3>
+        <!--  <section class="section-completed">
+         <h3 class="heading-tertiary u-margin-bottom-small">Completed</h3>
           <div class="tasks tasks--completed">
             <input type="checkbox" id="t4" class="tasks__check" />
             <label for="t4" class="tasks__label tasks--completed-label"
               ><span class="tasks__button"></span>Finished Javascript
               course</label
             >
+            <div class="tasks-btn">
+              <button class="tasks-btn__edit">Edit</button>
+              <button class="tasks-btn__delete">Delete</button>
+            </div>
           </div>
           <div class="tasks tasks--completed">
             <input type="checkbox" id="t5" class="tasks__check" />
             <label for="t5" class="tasks__label tasks--completed-label"
-              ><span class="tasks__button"></span>Finished forkify project
+              ><span class="tasks__button"></span>Finished forkify
+              project</label
+            >
+            <div class="tasks-btn">
+              <button class="tasks-btn__edit">Edit</button>
+              <button class="tasks-btn__delete">Delete</button>
+            </div>
           </div>
-        </section>
+        </section>-->
 
-        <div class="task-btn">
+        <div>
           <button class="btn">&plus;</button>
         </div>
       </main>
@@ -68,12 +95,10 @@
     <section class="section-modal-task hidden">
       <button class="modal-task__close">&times;</button>
       <form>
-      <input type="text" id="modal" class="modal-task__input" required />
-      <button class="modal-task__btn">Add task</button>
+        <input type="text" id="modal" class="modal-task__input" required />
+        <button class="modal-task__btn">Add task</button>
       </form>
     </section>
     <div class="overlay hidden">&nbsp;</div>
-
-    
   </body>
 </html>

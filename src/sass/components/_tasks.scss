@@ -2,9 +2,14 @@
   background-color: $color-primary-dark;
   padding: 2rem;
   border-radius: 2.5rem;
+  position: relative;
 
   &:not(:last-child) {
     margin-bottom: 0.6rem;
+  }
+
+  &:hover .tasks-btn {
+    display: block;
   }
 
   &__check {
