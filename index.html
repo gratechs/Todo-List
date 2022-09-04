@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@300;400;500;600;700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/sass/main.scss" />
@@ -25,8 +25,8 @@
           <p>No tasks added. Click on the button to add a new task.🙂</p>
         </div>
 
-        <!--   <section class="section-tasks">
-       <h3 class="heading-tertiary u-margin-bottom-small">Incomplete</h3>
+        <section class="section-tasks">
+          <!--   <h3 class="heading-tertiary u-margin-bottom-small">Incomplete</h3>
           <div class="tasks">
             <input type="checkbox" id="t1" class="tasks__check" />
             <label for="t1" class="tasks__label tasks--completed-label"
@@ -57,8 +57,8 @@
               <button class="tasks-btn__edit">Edit</button>
               <button class="tasks-btn__delete">Delete</button>
             </div>
-          </div>
-        </section> -->
+          </div>-->
+        </section>
 
         <!--  <section class="section-completed">
          <h3 class="heading-tertiary u-margin-bottom-small">Completed</h3>
@@ -96,6 +96,7 @@
       <button class="modal-task__close">&times;</button>
       <form>
         <input type="text" id="modal" class="modal-task__input" required />
+        <p class="input-error-message hidden">Please fill in a task</p>
         <button class="modal-task__btn">Add task</button>
       </form>
     </section>
