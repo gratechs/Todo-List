@@ -4,6 +4,8 @@ import 'core-js';
 import 'regenerator-runtime';
 
 const labelDateEl = document.querySelector('.date');
+const incompleteLabelEl = document.querySelector('.incomplete-label');
+const completedLabelEl = document.querySelector('.complete-label');
 
 const btnAddTaskEl = document.querySelector('.btn');
 const btnModalCloseTaskEl = document.querySelector('.modal-task__close');
@@ -13,14 +15,14 @@ const modalTaskEl = document.querySelector('.section-modal-task');
 const overlayEl = document.querySelector('.overlay');
 
 const inputEl = document.querySelector('.modal-task__input');
-const inputErrorMsg = document.querySelector('.input-error-message');
+const inputErrorMsgEl = document.querySelector('.input-error-message');
 
-const tasksContainerEl = document.querySelector('.section-tasks');
-const error = document.querySelector('.error');
+const tasksIncompleteContainerEl = document.querySelector('.section-tasks');
+const tasksCompletedContainerEl = document.querySelector('.section-completed');
 
-/////////////////////////////////////////
+const errorEl = document.querySelector('.error');
+
 // Implementing date functionality
-
 const now = new Date();
 const locale = navigator.language;
 
@@ -31,9 +33,7 @@ const options = {
 };
 
 labelDateEl.textContent = new Intl.DateTimeFormat(locale, options).format(now);
-console.log(labelDateEl.textContent);
 
-/////////////////////////////////////////
 // Showing the modal window
 const openModal = function () {
   modalTaskEl.classList.remove('hidden');
@@ -45,24 +45,33 @@ const openModal = function () {
 const closeModal = function () {
   modalTaskEl.classList.add('hidden');
   overlayEl.classList.add('hidden');
+  inputErrorMsgEl.classList.add('hidden');
 };
 
+// Listening for modal window clicks
 btnAddTaskEl.addEventListener('click', openModal);
 btnModalCloseTaskEl.addEventListener('click', closeModal);
 overlayEl.addEventListener('click', closeModal);
 
-/////////////////////////////////////////
-// Rendering inputed tasks to incomplete task section
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
 
+// Rendering inputed tasks to incomplete task section
 btnModalAddTaskEl.addEventListener('click', function (e) {
   e.preventDefault();
   const inputData = inputEl.value;
   inputEl.focus();
 
-  const taskHtml = ` 
-    <div class="tasks">
-      <input type="checkbox" id="t1" class="tasks__check" />
-      <label for="t1" class="tasks__label tasks--completed-label"
+  // Creating a dynamic id
+  let check = Math.random().toString();
+
+  const taskIncompleteHtml = `
+    <div class="tasks tasks--incomplete">
+      <input type="checkbox" value="${inputData}" id="${check}" class="tasks__check" />
+      <label for="${check}" class="tasks__label tasks--completed-label"
         ><span class="tasks__button"></span>${inputData}</label
       >
       <div class="tasks-btn">
@@ -74,13 +83,74 @@ btnModalAddTaskEl.addEventListener('click', function (e) {
 
   // Validating form input
   if (inputData === '') {
-    inputErrorMsg.classList.remove('hidden');
+    // Displaying error message
+    inputErrorMsgEl.classList.remove('hidden');
     return;
   }
 
-  inputErrorMsg.classList.add('hidden');
-  error.remove();
-  tasksContainerEl.insertAdjacentHTML('afterbegin', taskHtml);
+  // Hiding error message
+  inputErrorMsgEl.classList.add('hidden');
+
+  // Deleting error message
+  errorEl.remove();
+
+  // Rendering inputed tasks
+  tasksIncompleteContainerEl.insertAdjacentHTML(
+    'afterbegin',
+    taskIncompleteHtml
+  );
+
+  // Resetting inputed value
   inputEl.value = '';
+
+  // Closing the add task modal
   closeModal();
+
+  // Rendering the incomplete label heading
+  incompleteLabelEl.classList.remove('hidden');
+
+  // Adding checked tasks to completed tasks section
+  const myCheckEl = document.getElementById(check);
+  const tasksIncompleteHiddenEl = document.querySelector('.tasks--incomplete');
+
+  myCheckEl.addEventListener('click', function (e) {
+    console.log('Will it work?');
+    console.log(e);
+
+    // When checked
+    if (myCheckEl.checked) {
+      console.log('Checked');
+
+      const tasksCompletedHtml = `
+      <div class="tasks tasks--completed">
+        <input type="checkbox" value="${inputData}" id="${check}" class="tasks__check" />
+        <label for="${check}" class="tasks__label tasks--completed-label"
+          ><span class="tasks__button"></span>${inputData}</label
+        >
+        <div class="tasks-btn">
+          <button class="tasks-btn__edit">Edit</button>
+          <button class="tasks-btn__delete">Delete</button>
+        </div>
+      </div>
+    `;
+
+      // Rendering checked task
+      tasksCompletedContainerEl.insertAdjacentHTML(
+        'afterbegin',
+        tasksCompletedHtml
+      );
+
+      // Removing incomplete task
+      tasksIncompleteHiddenEl.classList.add('hidden');
+    } else {
+      // When unchecked
+      console.log('Unchecked');
+
+      // Rendering incomplete task
+      tasksIncompleteHiddenEl.classList.remove('hidden');
+
+      // Rendering the completed label heading
+      completedLabelEl.classList.remove('hidden');
+    }
+  });
 });

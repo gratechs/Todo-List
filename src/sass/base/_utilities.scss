@@ -2,12 +2,18 @@
   margin-bottom: 1.5rem !important;
 }
 
-.u-margin-bottom-medium {
-}
-
-.u-margin-bottom-big {
-}
-
 .u-margin-bottom-huge {
-  margin-top: 17rem;
+  margin-top: 17rem !important;
+}
+
+.incomplete-fixed {
+  position: absolute;
+  top: -2.5rem;
+  left: 0;
+}
+
+.complete-fixed {
+  position: absolute;
+  top: -2.5rem;
+  left: 0;
 }
