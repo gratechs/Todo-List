@@ -134,14 +134,22 @@ btnModalAddTaskEl.addEventListener('click', function (e) {
       </div>
     `;
 
-      // Rendering checked task
-      tasksCompletedContainerEl.insertAdjacentHTML(
-        'afterbegin',
-        tasksCompletedHtml
-      );
+      setTimeout(() => {
+        // Rendering checked task
+        tasksCompletedContainerEl.insertAdjacentHTML(
+          'afterbegin',
+          tasksCompletedHtml
+        );
 
-      // Removing incomplete task
-      tasksIncompleteHiddenEl.classList.add('hidden');
+        // Rendering the completed label heading
+        completedLabelEl.classList.remove('hidden');
+
+        // Removing incomplete task
+        tasksIncompleteHiddenEl.classList.add('hidden');
+      }, 500);
+
+      const tasksCompletedHiddenEl =
+        document.querySelector('.tasks--completed');
     } else {
       // When unchecked
       console.log('Unchecked');
@@ -149,8 +157,7 @@ btnModalAddTaskEl.addEventListener('click', function (e) {
       // Rendering incomplete task
       tasksIncompleteHiddenEl.classList.remove('hidden');
 
-      // Rendering the completed label heading
-      completedLabelEl.classList.remove('hidden');
+      if (tasksCompletedHiddenEl) console.log('It is here!');
     }
   });
 });
